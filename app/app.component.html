@@ -1,0 +1,61 @@
+    <div class="container"> <!-- just like in bootstrap it has to be in a container -->
+
+    <div class="row"> <!-- one row row -->
+            
+    <div class="col-xs-12">
+        <h1 class="text-center text-primary">Welcome to Task App <small>Where you can arrange your daily tasks</small></h1>
+
+        
+
+     </div>   
+</div>
+
+     <div class="row">
+         <div class="col-md-6 offset-md-3">
+
+            <form class="form-inline"  #taskForm="ngForm"> <!-- event binding, calling the addTask function. this is how we tell
+            angular to search for a submit and call the function.-->
+
+            <!-- IMPORTANT:  In order to be able to use all the form feature we need to import it in the app.module.ts. -->
+
+                <div class="form-group">
+                        
+                        <label for="task-field">Add a new task</label>
+                        <input type="text" required placeholder="Type in your task..." class="form-control" id="task-field" [(ngModel)]="currentTask.content" name="content"> <!-- ngModel is a 2 way binding 
+                        we can pass data both ways, in thi case from the field to the task content, but lets say we are updating a vlaue so we will go the oposite way.-->
+                        <!-- we added the required keyword so that it could not be empty. -->
+                            
+                </div>   
+
+
+                <div class="form-group">
+                        
+                        <!--<input type="submit"  id="submit-btn" class="btn btn-success" value="Add">-->
+                        <button (click)="addTask()" type="submit" id="submit-btn" class="btn btn-success" [disabled]="taskForm.form.invalid" ><i class="fa fa-plus" aria-hidden="true"></i> Add task</button>
+                         <!--Content: {{currentTask.content}}   to check if the data binding for the field is working. -->
+                </div>     
+
+            </form>
+
+         </div>
+
+
+     </div>
+
+
+     <div class="row" *ngIf="isArrayEmpty()">
+           <div class="alert alert-info" ><strong>You have no Tasks yet</strong></div> 
+     </div>
+
+
+<!--<app-card [task]="task1" ></app-card>-->
+    <div class="row"> <!-- bootstrap class -->
+        <app-card *ngFor="let theTask of tasksArray" [task]="theTask" [tasksArrayInCard]="tasksArray" (delete)="removeAccount($event)" ></app-card> 
+        <!-- tasks is the name of the array of tasks -->
+           
+            <!-- task is an input variable. -->
+            <!-- ngFor iterates in all the elements just like for in loop. -->
+
+            
+    </div> 
+</div>

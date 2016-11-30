@@ -1,0 +1,62 @@
+
+
+<div class="col-sm-3" > <!-- Three colomns -->
+
+    <div class="card" (click)="completeUncomplete()" 
+    
+    [ngClass]="{
+
+        completedCssClass:task.completed, 
+        otherCssClass: otherProperty
+
+
+    }"> <!-- if we click it is gonna change the completed status.   if it is completed it will use the other css class.-->
+    
+    
+
+        <div class="card-block">
+
+            <p>{{ task.content }}</p>  <!-- Data binding -->
+
+
+        </div>
+
+        <div class="card-footer"
+
+        [ngClass]="{
+
+        completedCssClass:task.completed, 
+        otherCssClass: otherProperty
+
+
+    }">
+
+      
+
+            <!-- for the icons we will use fontawesome.io
+                we installed to terminal : npm install font-awesome --save
+                the in the index.html we add <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+            -->
+            <div *ngIf="!isCompleted()">
+
+                 <i class="fa fa-times " aria-hidden="true"></i>  Not Completed
+            
+
+            </div>
+
+
+            <div *ngIf="isCompleted()">
+
+                 <i class="fa fa-check com" aria-hidden="true"></i> Completed
+                 
+            </div>
+
+            <button class="btn btn-danger" type="button" (click)="removeTask(task)" >Delete</button>
+            
+        </div>
+        <!--Complete: {{task.completed}} -->
+
+    </div>
+
+</div>
+

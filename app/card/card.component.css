@@ -1,0 +1,34 @@
+.card {
+
+    border-radius: 0;
+}
+
+.card ,
+ .card-footer {
+
+     background-color: #FFFFA5;
+     border: none;
+}
+
+
+.card-footer {
+
+    text-align: right;
+}
+
+i{ /* we are not using a class for the icon, */
+
+    color: red;
+    margin-right: .5rem; /* Instead of px. */
+
+}
+
+.completedCssClass{
+
+    background-color: #45EE50;
+}
+
+.com{
+
+    color: blue; 
+}

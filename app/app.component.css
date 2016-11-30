@@ -1,0 +1,48 @@
+.container{
+
+margin-top: 3rem;
+
+}
+
+
+.row{
+
+    margin-bottom: 1.5rem;
+
+}
+
+form{
+
+    text-align: center;
+
+}
+
+.btn:hover {
+
+    background-color: #00769B;
+
+
+
+}
+
+label{
+
+
+    margin-right: 1.5rem;
+}
+
+
+.form-control{
+
+    margin-right: 1.5rem;
+}
+.form-control:focus{ /* when we click inside the text field. */
+
+    border-color: #009688;
+    
+}
+
+i{
+
+    padding-right: 0.5rem;
+}
